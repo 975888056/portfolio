@@ -1,0 +1,9 @@
+#base_svg{
+    background-color:pink
+}
+
+.text{
+    text-align: center;
+    background-color: rgb(220, 181, 209);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

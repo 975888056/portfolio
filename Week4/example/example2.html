@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ten nested circles artwork</title>
+  </head>
+  <body>
+    <svg id="artwork" width="500" height="500"></svg>
+    <script>
+      // Generate random color
+      function getRandomColor() {
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+      }
+
+      // Draw ten nested circles
+      var svg = document.getElementById("artwork");
+      var x = 250;
+      var y = 250;
+      var radius = 200;
+      var isOddColor = true;
+
+      for (var i = 1; i <= 10; i++) {
+        // Create circle element
+        var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+
+        // Set circle attributes
+        circle.setAttribute("cx", x);
+        circle.setAttribute("cy", y);
+        circle.setAttribute("r", radius);
+        circle.setAttribute("fill", getRandomColor());
+
+        // Add circle to SVG canvas
+        svg.appendChild(circle);
+
+        // Update x, y, and radius for next circle
+        x = x ;
+        y = y ;
+        radius = radius / 1.5;
+
+        // Update color for next circle
+        isOddColor = !isOddColor;
+        if (isOddColor) {
+          // Generate odd color
+          var r = Math.floor(Math.random() * 128) * 2 + 1;
+          var g = Math.floor(Math.random() * 128) * 2 + 1;
+          var b = Math.floor(Math.random() * 128) * 2 + 1;
+          circle.setAttribute("fill", "rgb(" + r + ", " + g + ", " + b + ")");
+        } else {
+          // Generate even color
+          var r = Math.floor(Math.random() * 128) * 2;
+          var g = Math.floor(Math.random() * 128) * 2;
+          var b = Math.floor(Math.random() * 128) * 2;
+          circle.setAttribute("fill", "rgb(" + r + ", " + g + ", " + b + ")");
+        }
+      }
+    </script>
+  </body>
+</html>

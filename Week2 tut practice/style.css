@@ -1,0 +1,16 @@
+h1{
+    color: pink;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#first-heading {
+    background-color: rgb(43, 37, 29);
+}
+
+.centered{
+    text-align: center;
+}
+
+.red-text{
+    color: red
+}

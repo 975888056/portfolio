@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artwork Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <svg id="artwork" width="500" height="500"></svg>
+
+    <script>
+        // Get the SVG element
+        const svg = document.getElementById('artwork');
+
+        // Generate random colors
+        const colors = [];
+        for (let i = 0; i < 5; i++) {
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            colors.push(`rgb(${red}, ${green}, ${blue})`);
+        }
+
+        // Draw the artwork
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('x', i * 50);
+                rect.setAttribute('y', j * 50);
+                rect.setAttribute('width', 50);
+                rect.setAttribute('height', 50);
+                rect.setAttribute('fill', colors[(i + j) % colors.length]);
+                svg.appendChild(rect);
+            }
+        }
+    </script>
+</body>
+</html>

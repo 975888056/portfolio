@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout demo</title>
+
+    <style>
+       .container {  
+        display: grid;
+  grid-template-columns: 0.9fr 1.1fr 1fr 1fr;
+  grid-template-rows: 0.8fr 1.2fr 0.4fr 1.6fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "grid-header grid-header grid-header grid-header"
+    "grid-nav grid-text grid-svg grid-svg"
+    "grid-nav grid-text grid-svg grid-svg"
+    "grid-nav grid-text grid-controls grid-controls";
+}
+
+.grid-header { grid-area: grid-header; }
+
+.grid-nav { grid-area: grid-nav; }
+
+.grid-text { grid-area: grid-text; }
+
+.grid-svg { grid-area: grid-svg; }
+
+.grid-controls { grid-area: grid-controls; }
+
+.full-size-svg{width: 100%;
+               height: 100%;
+}
+
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid-header">
+            <h1 class="centered-text">page title!</h1>
+        </div>
+
+        <div class="grid-nav">
+            <a href=file:///Users/yeruhan/Desktop/IDEA9103/Week11%20tut%20practice/index.html>Home!</a>
+        </div>
+
+        <div class="grid-text">
+            <p>shncssdcjsbcjhsbdcjksbnkajnlxanscjhsdbcvhsbcsakjxlascb dshbasljncljsbcsbcljs</p>
+        </div>
+
+        <div>
+            <div class="grid-svg">
+                <div style="height: 200px;"
+                     <svg viewBox="0 0 200 200"></svg>
+                   
+
+                
+                    <line x1="0" y1="0" x2="200" y2="200" stroke="black"></line>
+                </svg>
+                <!-- <img src="http://placekitten.com/150/400" alt="stadd-bio-thumbnail"> -->
+                <svg width="200" height="200"></svg>
+                <line x1="200" y1="0" x2="0" y2="200" stroke="black"></line>
+            </svg>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
